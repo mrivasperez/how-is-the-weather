@@ -42,8 +42,8 @@ app.get('/about', (req, res) => {
 
 app.get('*', (req, res) => {
     res.render('404',{
-        title: 'Error',
-        message: '404 - Page not found.'
+        title: '404 ERROR',
+        message: 'Page not found.'
     });
 });
 
