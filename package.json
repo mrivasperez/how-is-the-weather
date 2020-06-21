@@ -10,6 +10,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "hbs": "^4.1.1"
-  }
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrivasperez/how-is-the-weather.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrivasperez/how-is-the-weather/issues"
+  },
+  "homepage": "https://github.com/mrivasperez/how-is-the-weather#readme"
 }
