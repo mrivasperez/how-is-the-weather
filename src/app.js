@@ -20,30 +20,31 @@ app.use(express.static(publicDirPath));
 // Setup what is served based on url visisted:
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'HOW IS THE WEATHER?'
+        title: 'HOW IS THE WEATHER?',
+        description: 'check the weather without going outside'
     });
 });
 
 app.get('/help', (req, res) => {
     res.render('help',{
-        title: 'Help',
-        message: 'Please enter the name of the city you would like to check the weather for in the search bar. '
+        title: 'THE HELP SECTION',
+        description: `let's figure it out...`
     });
 });
 
 
 app.get('/about', (req, res) => {
     res.render('about',{
-        title: 'About',
-        message: 'Check the weather in a simple web application. See the current weather conditions and temperature of your favorite or current city without having to look out your window!'
+        title: 'ABOUT',
+        description: 'a weather app'
     });
 });
 
 
 app.get('*', (req, res) => {
     res.render('404',{
-        title: '404 ERROR',
-        message: 'Page not found.'
+        title: 'THIS IS A 404 ERROR',
+        description: 'the page you were looking for was not found'
     });
 });
 
