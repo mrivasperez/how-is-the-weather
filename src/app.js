@@ -25,6 +25,41 @@ app.get('', (req, res) => {
     });
 });
 
+/* 
+I was trying out query strings here...
+
+app.get('/search', (req, res) => {
+    if (!req.query.search){
+        return res.send({
+            error: 'You did not provide a location'
+        })
+    }
+
+    console.log(req.query.search)
+
+    res.send({
+        seattle: {
+            temperature: 75,
+            conditions: 'raining'
+        }
+    })
+})
+
+
+app.get('/products', (req, res) => {
+    if (!req.query.search){
+        return res.send({
+            error: 'You must provide a search term.'
+        })
+    }
+
+    console.log(req.query.search)
+    res.send({
+        products: []
+    })
+})
+*/
+
 app.get('/help', (req, res) => {
     res.render('help',{
         title: 'THE HELP SECTION',
