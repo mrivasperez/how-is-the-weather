@@ -2,7 +2,9 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
-const request = require('postman-request')
+const search = require('./utils-search');
+const request = require('postman-request');
+
 
 // Initialize express
 const app = express();
@@ -26,14 +28,35 @@ app.get('', (req, res) => {
     });
 
 
-    
+// Require geocode/forecast into app.js
+// Use location to get weather
+// Sned back the real forecast and location
 
 
     res.send({
-        forecast: 'It is raining';
+        forecast: 'It is raining',
         location: 'Seattle',
     })
 });
+
+app.get('/search', (req, res) => {
+    if (!req.query.search){
+        return res.send({
+            error: 'You did not provide a location'
+        })
+    }
+
+    const location = req.query.search;
+
+    search(location, (error, results) =>{
+        if(error) {
+            return res.send({error})
+        }
+        return res.send(results);
+    });
+    
+
+})
 
 /* 
 I was trying out query strings here...
@@ -95,6 +118,6 @@ app.get('*', (req, res) => {
 
 
 // set port to 3000
-app.listen(3000, () => {
+app.listen(4000, () => {
     console.log('Connected at localhost:3000')
 });
