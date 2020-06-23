@@ -30,11 +30,6 @@ app.get('', (req, res) => {
 });
 
 app.get('/search', (req, res) => {
-    // if (!req.query.search){
-    //     return res.send({
-    //         error: 'You did not provide a location'
-    //     })
-    // }
 
     const location = req.query.search;
 
@@ -45,9 +40,38 @@ app.get('/search', (req, res) => {
 
         return res.send(results);
     });
-    
+});
 
-})
+
+
+app.get('/help', (req, res) => {
+    res.render('help',{
+        title: 'THE HELP SECTION',
+        description: `let's figure it out...`
+    });
+});
+
+
+app.get('/about', (req, res) => {
+    res.render('about',{
+        title: 'ABOUT',
+        description: 'a weather app'
+    });
+});
+
+
+app.get('*', (req, res) => {
+    res.render('404',{
+        title: 'THIS IS A 404 ERROR',
+        description: 'the page you were looking for was not found'
+    });
+});
+
+
+// set port to 4000
+app.listen(4000, () => {
+    console.log('Connected at localhost:4000')
+});
 
 /* 
 I was trying out query strings here...
@@ -83,32 +107,3 @@ app.get('/products', (req, res) => {
     })
 })
 */
-
-app.get('/help', (req, res) => {
-    res.render('help',{
-        title: 'THE HELP SECTION',
-        description: `let's figure it out...`
-    });
-});
-
-
-app.get('/about', (req, res) => {
-    res.render('about',{
-        title: 'ABOUT',
-        description: 'a weather app'
-    });
-});
-
-
-app.get('*', (req, res) => {
-    res.render('404',{
-        title: 'THIS IS A 404 ERROR',
-        description: 'the page you were looking for was not found'
-    });
-});
-
-
-// set port to 3000
-app.listen(4000, () => {
-    console.log('Connected at localhost:3000')
-});
