@@ -27,16 +27,6 @@ app.get('', (req, res) => {
         description: 'check the weather without going outside'
     });
 
-
-// Require geocode/forecast into app.js
-// Use location to get weather
-// Sned back the real forecast and location
-
-
-    res.send({
-        forecast: 'It is raining',
-        location: 'Seattle',
-    })
 });
 
 app.get('/search', (req, res) => {
