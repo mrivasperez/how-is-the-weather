@@ -40,11 +40,11 @@ app.get('', (req, res) => {
 });
 
 app.get('/search', (req, res) => {
-    if (!req.query.search){
-        return res.send({
-            error: 'You did not provide a location'
-        })
-    }
+    // if (!req.query.search){
+    //     return res.send({
+    //         error: 'You did not provide a location'
+    //     })
+    // }
 
     const location = req.query.search;
 
@@ -52,6 +52,7 @@ app.get('/search', (req, res) => {
         if(error) {
             return res.send({error})
         }
+
         return res.send(results);
     });
     

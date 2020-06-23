@@ -1,6 +1,6 @@
 const request = require('postman-request');
 
-const search = (location, callback) => {
+const search = (location = 'Seattle', callback) => {
 
     if(!location){
         console.log('no location...?')
@@ -30,4 +30,4 @@ const search = (location, callback) => {
      });
     };
 
-module.exports = search
+module.exports = search;
