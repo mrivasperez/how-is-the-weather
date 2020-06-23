@@ -2,6 +2,7 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
+const request = require('postman-request')
 
 // Initialize express
 const app = express();
@@ -23,6 +24,15 @@ app.get('', (req, res) => {
         title: 'HOW IS THE WEATHER?',
         description: 'check the weather without going outside'
     });
+
+
+    
+
+
+    res.send({
+        forecast: 'It is raining';
+        location: 'Seattle',
+    })
 });
 
 /* 
