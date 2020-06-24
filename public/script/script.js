@@ -37,10 +37,23 @@ const displayForecast = (locationData, forecastData) => {
     theHeader.style.display = 'none';
     console.log(forecastData.weather_descriptions[0]);
     locationName.innerText = `The weather in ${locationData.name}`;
-    forecastDescription.innerText = `In ${locationData.name} it is currently ${forecastData.weather_descriptions[0].toLowerCase()}. Here are additional details to help you decide on whether you want to go outside or not:`;
-    dataColOne.innerHTML = {`
-    <p>
-    `}
+    forecastDescription.innerText = `In ${locationData.name} it is currently ${forecastData.weather_descriptions[0].toLowerCase()}. Here is all the weather information I found for you:`;
+    dataColOne.innerHTML = (`
+        <p>Local date and time: ${locationData.localtime}</p>
+        <p>Temperature: ${forecastData.temperature}</p>
+        <p>Feels like: ${forecastData.feelslike}</p>
+        <p>UV Index: ${forecastData.uv_index}</p>
+        <p>Is the sun still out? ${forecastData.is_day}</p>
+
+    `);
+
+    dataColTwo.innerHTML = (`
+        <p>Chance of rain: ${forecastData.precip}</p>        
+        <p>Humidity: ${forecastData.humidity}</p>   
+        <p>visibility: ${forecastData.visibility}</p>   
+        <p>Wind: ${forecastData.windspeed}</p>
+        <p>Wind direction: ${forecastData.wind_dir}</p>
+    `)
     // such and such .innerhtml for columns
 }
 
