@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "comments": "console.log('Don't forget to add screpts for npm start and npm dev')",
     "start": "node src/app.js",
     "dev": "nodemon src/app.js -e js,hbs"
   },
