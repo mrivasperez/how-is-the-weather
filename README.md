@@ -1,11 +1,14 @@
 # HOW IS THE WEATHER?
 A node JS weather app by mrivasperez/
 
+### Notice:
+Weatherstack api does not have HTTPS for free, so users will get a mixed-content error on Chrome
+
 ## About
 I created a simple weather app using Node.JS to retrieve location information and the current weather.
 
 ## Deployment
-The application is deployed to Heroku. You can also deploy locally using the installation instructions:
+The application is deployed to Heroku (node-how-is-the-weather.herokuapp.com). You can also deploy locally using the installation instructions:
 ### Local deploy
 After downloading or cloning the repo, perform the following:
 1. Open the project folder at the root in your terminal and run npm install to download all of the dependencies needed for this project.
