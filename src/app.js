@@ -9,6 +9,9 @@ const request = require('postman-request');
 // Initialize express
 const app = express();
 
+// Heroku port or choose 4000 if process.env does not exist (local deployment)
+const port = process.env.PORT || 4000;
+
 // Define paths for express config
 const publicDirPath = path.join(__dirname, '../public');
 const partialsPath = path.join(__dirname, '../views/partials');
@@ -63,10 +66,13 @@ app.get('*', (req, res) => {
     });
 });
 
+// IF RUNNING LOCALLY:
+// app.listen(4000, () => {
+//     console.log('Connected at localhost:4000')
+// });
 
-// set port to 4000
-app.listen(4000, () => {
-    console.log('Connected at localhost:4000')
+app.listen(port, () => {
+    console.log(`connected at port ${port}`)
 });
 
 /* 
