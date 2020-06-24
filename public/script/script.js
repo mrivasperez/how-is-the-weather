@@ -15,8 +15,14 @@ console.log('Connected to client-side script!');
 const getForecast = (searchValue) => {
     fetch(`http://api.weatherstack.com/current?access_key=5aa3605cb312519ea305b90d159ec3f4&query=${searchValue}`).then((response) => {
         response.json().then((data) => {
+            
+            if (data.error) {
+                alert(`Could not find ${searchValue}`);
+                return;
+            }
 
             const results = (data) => {
+
                 let locationData = data.location;
                 let forecastData = data.current;
             
@@ -39,6 +45,8 @@ const showForecast = () => {
 
 const displayForecast = (locationData, forecastData) => {
     
+    console.log(locationData)
+
     locationName.innerText = `
         The weather in ${locationData.name}
     `
