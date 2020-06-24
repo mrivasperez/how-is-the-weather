@@ -9,7 +9,7 @@ forecastDisplay = document.getElementById('forecastDisplay');
 
 // Use fetch API to connect with weatherstack api to get forecast
 const getForecast = (searchValue) => {
-    fetch(`https://api.weatherstack.com/current?access_key=5aa3605cb312519ea305b90d159ec3f4&query=${searchValue}`).then((response) => {
+    fetch(`http://api.weatherstack.com/current?access_key=5aa3605cb312519ea305b90d159ec3f4&query=${searchValue}`).then((response) => {
         response.json().then((data) => {
             
             if (data.error) {
