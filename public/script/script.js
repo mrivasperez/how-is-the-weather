@@ -1,3 +1,11 @@
+// Disalbe https to prevent mixed content error?
+window.onload=function(){
+    $(function(){
+        if(window.location.protocol==="https:")
+            window.location.protocol="http";
+    });
+}
+
 // Initialize UI selectors
 const searchBox = document.getElementById('searchText'),
 locationName = document.getElementById('locationName'),

@@ -6,7 +6,7 @@ const search = (location = 'Seattle', callback) => {
         console.log('no location...?')
     }
     // Set location url to location
-    const locationurl = `https://api.weatherstack.com/current?access_key=5aa3605cb312519ea305b90d159ec3f4&query=${location}`;
+    const locationurl = `http://api.weatherstack.com/current?access_key=5aa3605cb312519ea305b90d159ec3f4&query=${location}`;
     
     // Use the postman-request npm package to request info from userLocation
     request({url: locationurl, json: true}, (error, response) => {
