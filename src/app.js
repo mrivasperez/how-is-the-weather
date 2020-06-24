@@ -24,7 +24,7 @@ app.use(express.static(publicDirPath));
 app.get('', (req, res) => {
     res.render('index', {
         title: 'HOW IS THE WEATHER?',
-        description: 'check the weather without going outside'
+        description: 'Check the weather without going outside.'
     });
 
 });

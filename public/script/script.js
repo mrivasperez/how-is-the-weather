@@ -3,7 +3,8 @@ locationName = document.getElementById('locationName'),
 forecastDescription = document.getElementById('summary'),
 dataColOne = document.getElementById('col-one'),
 dataColTwo = document.getElementById('col-two'),
-theHeader = document.getElementById('theHeader');
+theHeader = document.getElementById('theHeader'),
+forecastDisplay = document.getElementById('forecastDisplay');
 
 
 
@@ -28,16 +29,24 @@ const getForecast = (searchValue) => {
 
 }
 
-
-const displayForecast = (locationData, forecastData) => {
-    console.log(locationData);
-    console.log(forecastData);
+const showForecast = () => {
     searchBox.value = '';
     // if the weather is sunny, tell the user to go inside
-    theHeader.style.display = 'none';
-    console.log(forecastData.weather_descriptions[0]);
-    locationName.innerText = `The weather in ${locationData.name}`;
-    forecastDescription.innerText = `In ${locationData.name} it is currently ${forecastData.weather_descriptions[0].toLowerCase()}. Here is all the weather information I found for you:`;
+    theHeader.classList.add('hidden');
+    forecastDisplay.classList.remove('hidden');
+
+}
+
+const displayForecast = (locationData, forecastData) => {
+    
+    locationName.innerText = `
+        The weather in ${locationData.name}
+    `
+
+    forecastDescription.innerText = `
+        In ${locationData.name} it is currently ${forecastData.weather_descriptions[0].toLowerCase()}. Here is all the weather information I found for you:
+    `;
+
     dataColOne.innerHTML = (`
         <p>Local date and time: ${locationData.localtime}</p>
         <p>Temperature: ${forecastData.temperature}</p>
@@ -54,8 +63,9 @@ const displayForecast = (locationData, forecastData) => {
         <p>Wind: ${forecastData.windspeed}</p>
         <p>Wind direction: ${forecastData.wind_dir}</p>
     `)
-    // such and such .innerhtml for columns
-}
+
+    showForecast();
+};
 
 
 document.getElementById('searchText').addEventListener('keypress', (e) => {
