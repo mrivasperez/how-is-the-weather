@@ -59,16 +59,16 @@ const displayForecast = (locationData, forecastData) => {
     // Information displayed in the first column
     dataColOne.innerHTML = (`
         <p>Local date and time: ${locationData.localtime}</p>
-        <p>Temperature: ${forecastData.temperature}</p>
-        <p>Feels like: ${forecastData.feelslike}</p>
+        <p>Temperature: ${(forecastData.temperature * 9/5) + 32}&#8457;</p>
+        <p>Feels like: ${(forecastData.feelslike * 9/5) + 32}&#8457;</p>
         <p>UV Index: ${forecastData.uv_index}</p>
         <p>Is the sun still out? ${forecastData.is_day}</p>
 
     `);
     // Information displayed in the second column
     dataColTwo.innerHTML = (`
-        <p>Chance of rain: ${forecastData.precip}</p>        
-        <p>Humidity: ${forecastData.humidity}</p>   
+        <p>Chance of rain: ${forecastData.precip}%</p>        
+        <p>Humidity: ${forecastData.humidity}%</p>   
         <p>visibility: ${forecastData.visibility}</p>   
         <p>Wind: ${forecastData.windspeed}</p>
         <p>Wind direction: ${forecastData.wind_dir}</p>
