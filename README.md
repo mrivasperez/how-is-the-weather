@@ -26,8 +26,10 @@ After downloading or cloning the repo, perform the following:
 ## Screenshots
 ![Screenshot of home page](public/img/screenshot1.png)
 > Screenshot of home page
+
 ![Screenshot of search](public/img/screenshot2.png)
 > Screenshot of the search feature being used
+
 ![Screenshot of forecast](public/img/screenshot3.png)
 > Screenshot of search results being displayed
 
