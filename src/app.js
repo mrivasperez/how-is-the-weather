@@ -30,14 +30,11 @@ app.get('', (req, res) => {
 });
 
 app.get('/search', (req, res) => {
-
     const location = req.query.search;
-
     search(location, (error, results) =>{
         if(error) {
             return res.send({error})
         }
-
         return res.send(results);
     });
 });
