@@ -42,20 +42,19 @@ const showForecast = () => {
     // if the weather is sunny, tell the user to go inside
     theHeader.classList.add('hidden');
     forecastDisplay.classList.remove('hidden');
-
 }
 
 const displayForecast = (locationData, forecastData) => {
-    
-    console.log(locationData)
     // Modify heading 
     locationName.innerText = `
         The weather in ${locationData.name}
-    `
+    `;
+
     // Description shown after heading
     forecastDescription.innerText = `
         In ${locationData.name} it is currently ${forecastData.weather_descriptions[0].toLowerCase()}. Here is all the weather information I found for you:
     `;
+
     // Information displayed in the first column
     dataColOne.innerHTML = (`
         <p>Local date and time: ${locationData.localtime}</p>
@@ -65,6 +64,7 @@ const displayForecast = (locationData, forecastData) => {
         <p>Is the sun still out? ${forecastData.is_day}</p>
 
     `);
+
     // Information displayed in the second column
     dataColTwo.innerHTML = (`
         <p>Chance of rain: ${forecastData.precip}%</p>        
@@ -72,7 +72,8 @@ const displayForecast = (locationData, forecastData) => {
         <p>visibility: ${forecastData.visibility}</p>   
         <p>Wind: ${forecastData.windspeed}</p>
         <p>Wind direction: ${forecastData.wind_dir}</p>
-    `)
+    `);
+    
     // Run function to display the above
     showForecast();
 };
