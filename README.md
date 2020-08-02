@@ -1,5 +1,5 @@
 # HOW IS THE WEATHER?
-A node JS weather app by mrivasperez/
+A node JS weather app by mrivasperez [View demo](https://node-how-is-the-weather.herokuapp.com)
 
 ### Notice:
 Weatherstack api does not have HTTPS for free, so users will get a mixed-content error on Chrome
